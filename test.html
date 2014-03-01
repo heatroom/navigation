@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="build/build.css">
+</head>
+<body>
+	<style>
+
+	.Navigation-dropdown {
+		font-size: 12px;
+		display: inline-block;
+		position: relative;
+		line-height: 25px;
+		padding: 0 1em;
+	}
+	.Navigation-trigger {
+		display: inline-block;
+		background: url("https://segment.io/project-integrations/build/segmentio-navigation/images/caret.svg") center 40% no-repeat;
+		height: 20px;
+		width: 20px;
+		-webkit-background-size: 60%;
+		background-size: 60%;
+		cursor: pointer;
+		vertical-align: middle;
+		position: relative;
+	}
+	.Navigation-menu {
+		background: #A6C776;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		border-radius: 4px;
+		z-index: -1;
+		min-width: 140px;
+		padding: 1em 1.5em;
+		margin-top: 15px;
+		opacity: 0;
+		-webkit-transform: scale(0.5) translateX(-50%);
+		-ms-transform: scale(0.5) translateX(-50%);
+		transform: scale(0.5) translateX(-50%);
+		-webkit-transform-origin: 0 0;
+		-ms-transform-origin: 0 0;
+		transform-origin: 0 0;
+		-webkit-transition: all 400ms cubic-bezier(0.240,0.220,0.015,1.560),opacity 100ms linear;
+		transition: all 400ms cubic-bezier(0.240,0.220,0.015,1.560),opacity 100ms linear;
+	}
+	.Navigation-dropdown a {
+		color: #F8F5F0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		display: block;
+		-webkit-transition: opacity 200ms ease-in;
+		transition: opacity 200ms ease-in;
+		line-height: 22px;
+		position: relative;
+		white-space: nowrap;
+	}
+	.Navigation-dropdown.open .Navigation-menu {
+		display: block;
+		-webkit-transform: scale(1) translateX(-50%);
+		-ms-transform: scale(1) translateX(-50%);
+		transform: scale(1) translateX(-50%);
+		opacity: 1;
+		z-index: 10;
+	}
+	.page {
+		padding: 100px;
+	}
+	</style>
+	<div class="page">
+	<div class="Navigation">
+		<div class="Navigation-dropdown">
+	      <div class="Navigation-trigger" on-click="open">
+	        <div class="Navigation-menu">
+	          <a href="/libraries">Libraries</a>
+	          <a href="/mobile">Mobile</a>
+	          <a href="/customers">Customers</a>
+	          <a href="/blog">Blog</a>
+	          <a href="/team">Team</a>
+	          <a href="/jobs">Jobs</a>
+	        </div>
+	      </div>
+	    </div>
+    </div>
+    </div>
+    <script src="build/build.js"></script>
+    <script>
+    	// Hooks up pre-rendered nav
+		require('navigation');
+    </script>
+</body>
+</html>
